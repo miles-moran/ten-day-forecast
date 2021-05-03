@@ -9,6 +9,11 @@ const Input = ({ handleSearch }) => {
         placeholder="Enter a ZIP"
         value={zip}
         onChange={(e) => setZip(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter'){
+            handleSearch(zip)
+          }
+        }}
       />
       <input
         style={{ height: "1.4rem" }}
